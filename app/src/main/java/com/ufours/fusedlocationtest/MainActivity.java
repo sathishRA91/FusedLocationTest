@@ -140,11 +140,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void updateLocationUI() {
+
         if (mCurrentLocation != null) {
             location_result.setText(
                     "Lat: " + mCurrentLocation.getLatitude() + ", " +
                             "Lng: " + mCurrentLocation.getLongitude()
             );
+
+            Log.e("LatLon",   "Lat: " + mCurrentLocation.getLatitude() + ", " +
+                    "Lng: " + mCurrentLocation.getLongitude());
 
             // giving a blink animation on TextView
             location_result.setAlpha(0);
@@ -158,7 +162,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState)
+    {
         super.onSaveInstanceState(outState);
 
         outState.putBoolean("is_requesting_updates", mRequestingLocationUpdates);
@@ -217,7 +222,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void toggleButtons() {
+    private void toggleButtons()
+    {
         if (mRequestingLocationUpdates) {
             btn_start_location_updates.setEnabled(false);
             btn_stop_location_updates.setEnabled(true);
@@ -228,7 +234,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void openSettings() {
+    private void openSettings()
+    {
         Intent intent = new Intent();
         intent.setAction(
                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
@@ -238,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
 
     @Override
     public void onResume() {
@@ -270,7 +278,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v.getId() == R.id.btn_get_last_location) {
             showLastKnownLocation();
-        } else if (v.getId() == R.id.btn_start_location_updates) {
+        } else if (v.getId() == R.id.btn_start_location_updates)
+        {
 
             mRequestingLocationUpdates = true;
 
@@ -280,20 +289,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 openSettings();
             }
 
-        } else if (v.getId() == R.id.btn_stop_location_updates) {
+        } else if (v.getId() == R.id.btn_stop_location_updates)
+        {
             mRequestingLocationUpdates = false;
             stopLocationUpdates();
         }
 
     }
 
-    public void stopLocationUpdates() {
+    public void stopLocationUpdates()
+    {
         // Removing location updates
         mFusedLocationClient
                 .removeLocationUpdates(mLocationCallback)
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
                         Toast.makeText(getApplicationContext(), "Location updates stopped!", Toast.LENGTH_SHORT).show();
                         toggleButtons();
                     }
@@ -301,7 +313,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void showLastKnownLocation() {
+    public void showLastKnownLocation()
+    {
         if (mCurrentLocation != null) {
             Toast.makeText(getApplicationContext(), "Lat: " + mCurrentLocation.getLatitude()
                     + ", Lng: " + mCurrentLocation.getLongitude(), Toast.LENGTH_LONG).show();

@@ -3,7 +3,6 @@ package com.ufours.fusedlocationtest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -17,7 +16,7 @@ public class ActivityViManager extends YouTubeBaseActivity implements YouTubePla
     public static final String DEVELOPER_KEY = "AIzaSyB59rnDL5mAgw11gKMN5ql7xoriC5m7mnE";
 
     // YouTube video id
-    public static final String YOUTUBE_VIDEO_CODE = "_oEA18Y8gM0";
+    public String YOUTUBE_VIDEO_CODE = "";
     private YouTubePlayerView youTubeView;
 
     private static final int RECOVERY_DIALOG_REQUEST = 1;
@@ -29,8 +28,11 @@ public class ActivityViManager extends YouTubeBaseActivity implements YouTubePla
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
+        YOUTUBE_VIDEO_CODE = getIntent().getStringExtra("Code");
+
         // Initializing video player with developer key
         youTubeView.initialize(DEVELOPER_KEY, this);
+
 
     }
 
@@ -44,7 +46,7 @@ public class ActivityViManager extends YouTubeBaseActivity implements YouTubePla
             youTubePlayer.loadVideo(YOUTUBE_VIDEO_CODE);
 
             // Hiding player controls
-            youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
+            youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
         }
     }
 
