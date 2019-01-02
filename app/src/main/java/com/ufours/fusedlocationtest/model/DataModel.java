@@ -3,16 +3,16 @@ package com.ufours.fusedlocationtest.model;
 public class DataModel {
 
 
-    private String name;
+    private String Name;
 
     private String code;
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public String getCode() {

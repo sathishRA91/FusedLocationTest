@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1028759750563",
+    "firebase_url": "https://fusedtest-f2621.firebaseio.com",
+    "project_id": "fusedtest-f2621",
+    "storage_bucket": "fusedtest-f2621.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028759750563:android:d26a3370fe8abbbe",
+        "android_client_info": {
+          "package_name": "com.ufours.fusedlocationtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028759750563-tujoondg53k0r8i8e371477qe4gnfb10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe3Yl3dZ6ZewMpwMEtfer_tvpToR-LYzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
