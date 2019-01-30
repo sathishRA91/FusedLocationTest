@@ -67,26 +67,31 @@ public class ActivityPagination extends AppCompatActivity {
 
                             loadValue = 2;
 
-
+                            //loadData();
                         }
                     }
                 }
 
             }
         });
+
+
+
+
+
+
     }
 
 
     private void loadData() {
 
 
-
-        FirebaseRefernce.limitToFirst(EndIndex).startAt(StartIndex*StartIndex).addValueEventListener(new ValueEventListener() {
+        FirebaseRefernce.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 //clearing the previous artist list
-                dataList.clear();
+
 
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
@@ -109,7 +114,6 @@ public class ActivityPagination extends AppCompatActivity {
                     IsLoading=true;
                     adapter.notifyDataSetChanged();
                 }
-
 
             }
 
