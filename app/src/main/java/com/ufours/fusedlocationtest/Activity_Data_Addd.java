@@ -44,8 +44,6 @@ public class Activity_Data_Addd extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-
-
               String Name=  Et_name.getText().toString().trim();
 
 

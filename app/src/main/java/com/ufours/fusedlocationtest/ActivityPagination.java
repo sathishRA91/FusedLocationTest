@@ -57,10 +57,12 @@ public class ActivityPagination extends AppCompatActivity {
                 int totalItemCount = layoutManager.getItemCount();
                 int pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
 
-                if (dy > 0) {
+                if (dy > 0)
+                {
                     if (IsLoading) {
 
-                        if ((pastVisibleItems + visibleItemCount) >= totalItemCount) {
+                        if ((pastVisibleItems + visibleItemCount) >= totalItemCount)
+                        {
                             StartIndex = EndIndex;
                             EndIndex = EndIndex + 10;
                             IsLoading = false;
