@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_Data_Addd">
+        <activity android:name=".ActivitySwipe">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,6 +22,8 @@
         </activity>
 
         <activity android:name=".ActivityPagination"/>
+
+        <activity android:name=".Activity_Data_Addd"/>
     </application>
 
 </manifest>
