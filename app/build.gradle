@@ -31,5 +31,6 @@ dependencies {
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
+    implementation files('libs/android-viewbadger.jar')
 }
 apply plugin: 'com.google.gms.google-services'
